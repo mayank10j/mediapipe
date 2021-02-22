@@ -34,7 +34,7 @@ mediapipe_cc_proto_library(
         ":kinematic_path_solver_cc_proto",
         "//mediapipe/examples/desktop/autoflip:autoflip_messages_cc_proto",
     ],
-    visibility = ["//mediapipe/examples:__subpackages__"],
+    visibility = ["//visibility:public"],
     deps = [":cropping_proto"],
 )
 
@@ -46,7 +46,7 @@ proto_library(
 mediapipe_cc_proto_library(
     name = "kinematic_path_solver_cc_proto",
     srcs = ["kinematic_path_solver.proto"],
-    visibility = ["//mediapipe/examples:__subpackages__"],
+    visibility = ["//visibility:public"],
     deps = [":kinematic_path_solver_proto"],
 )
 
@@ -58,7 +58,7 @@ proto_library(
 mediapipe_cc_proto_library(
     name = "focus_point_cc_proto",
     srcs = ["focus_point.proto"],
-    visibility = ["//mediapipe/examples:__subpackages__"],
+    visibility = ["//visibility:public"],
     deps = [":focus_point_proto"],
 )
 
@@ -336,7 +336,7 @@ proto_library(
 mediapipe_cc_proto_library(
     name = "visual_scorer_cc_proto",
     srcs = ["visual_scorer.proto"],
-    visibility = ["//mediapipe/examples:__subpackages__"],
+    visibility = ["//visibility:public"],
     deps = [":visual_scorer_proto"],
 )
 
