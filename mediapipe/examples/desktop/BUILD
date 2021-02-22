@@ -74,3 +74,20 @@ cc_library(
         "//mediapipe/gpu:gpu_shared_data_internal",
     ],
 )
+
+
+mediapipe_simple_subgraph(
+    name = "autoflip_graph",
+    graph = "autoflip_graph.pbtxt",
+    register_as = "AutoFlipGraph",
+    deps = [
+        "//mediapipe/calculators/core:gate_calculator",
+        "//mediapipe/calculators/core:split_vector_calculator",
+        "//mediapipe/calculators/tensor:image_to_tensor_calculator",
+        "//mediapipe/calculators/tensor:inference_calculator",
+        "//mediapipe/calculators/tensor:tensors_to_floats_calculator",
+        "//mediapipe/calculators/tensor:tensors_to_landmarks_calculator",
+        "//mediapipe/calculators/util:landmark_projection_calculator",
+        "//mediapipe/calculators/util:thresholding_calculator",
+    ],
+)

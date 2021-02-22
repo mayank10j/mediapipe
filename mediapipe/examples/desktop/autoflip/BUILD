@@ -16,7 +16,7 @@ load("//mediapipe/framework/port:build_config.bzl", "mediapipe_cc_proto_library"
 
 licenses(["notice"])
 
-package(default_visibility = ["//mediapipe/examples:__subpackages__"])
+package(default_visibility = ["//visibility:public"])
 
 proto_library(
     name = "autoflip_messages_proto",
@@ -31,7 +31,7 @@ mediapipe_cc_proto_library(
     srcs = ["autoflip_messages.proto"],
     cc_deps = ["//mediapipe/framework:calculator_cc_proto"],
     visibility = [
-        "//mediapipe/examples:__subpackages__",
+        "//visibility:public",
     ],
     deps = [":autoflip_messages_proto"],
 )
