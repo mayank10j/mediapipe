@@ -60,6 +60,8 @@ cc_library(
         "//mediapipe/calculators/core:string_to_int_calculator",
         "//mediapipe/calculators/image:image_transformation_calculator",
         "//mediapipe/calculators/image:scale_image_calculator",
+        "//mediapipe/calculators/video:opencv_video_decoder_calculator",
+        "//mediapipe/calculators/video:opencv_video_encoder_calculator",        
         "//mediapipe/calculators/util:detection_unique_id_calculator",
         "//mediapipe/modules/face_detection:face_detection_front_cpu",
         "//mediapipe/modules/face_landmark:face_landmark_front_cpu",
