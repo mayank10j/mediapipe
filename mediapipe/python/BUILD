@@ -71,7 +71,7 @@ cc_library(
         "//mediapipe/calculators/image:scale_image_calculator",
         "//mediapipe/calculators/core:packet_thinner_calculator",
         "//mediapipe/calculators/extra:border_detection_calculator",
-        # "//mediapipe/calculators/extra:content_zooming_calculator",
+        "//mediapipe/calculators/extra:content_zooming_calculator",
         # "//mediapipe/calculators/extra:face_to_region_calculator",
         # "//mediapipe/calculators/extra:localization_to_region_calculator",
         # "//mediapipe/calculators/extra:scene_cropping_calculator",

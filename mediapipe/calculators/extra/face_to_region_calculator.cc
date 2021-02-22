@@ -16,7 +16,7 @@
 #include <memory>
 
 #include "mediapipe/examples/desktop/autoflip/autoflip_messages.pb.h"
-#include "mediapipe/examples/desktop/autoflip/calculators/face_to_region_calculator.pb.h"
+#include "mediapipe/calculators/extra/face_to_region_calculator.pb.h"
 #include "mediapipe/examples/desktop/autoflip/quality/visual_scorer.h"
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/formats/detection.pb.h"

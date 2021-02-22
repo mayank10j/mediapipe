@@ -19,7 +19,7 @@
 #include <vector>
 
 #include "mediapipe/examples/desktop/autoflip/autoflip_messages.pb.h"
-#include "mediapipe/examples/desktop/autoflip/calculators/signal_fusing_calculator.pb.h"
+#include "mediapipe/calculators/extra/signal_fusing_calculator.pb.h"
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/port/ret_check.h"
 #include "mediapipe/framework/port/status.h"

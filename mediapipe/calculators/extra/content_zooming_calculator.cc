@@ -16,7 +16,7 @@
 #include <memory>
 
 #include "mediapipe/examples/desktop/autoflip/autoflip_messages.pb.h"
-#include "mediapipe/examples/desktop/autoflip/calculators/content_zooming_calculator.pb.h"
+#include "mediapipe/calculators/extra/content_zooming_calculator.pb.h"
 #include "mediapipe/examples/desktop/autoflip/quality/kinematic_path_solver.h"
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/formats/detection.pb.h"

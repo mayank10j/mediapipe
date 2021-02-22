@@ -18,7 +18,7 @@
 #include <utility>
 #include <vector>
 
-#include "mediapipe/examples/desktop/autoflip/calculators/shot_boundary_calculator.pb.h"
+#include "mediapipe/calculators/extra/shot_boundary_calculator.pb.h"
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/formats/image_frame.h"
 #include "mediapipe/framework/formats/image_frame_opencv.h"

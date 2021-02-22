@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #include "absl/strings/string_view.h"
-#include "mediapipe/examples/desktop/autoflip/calculators/shot_boundary_calculator.pb.h"
+#include "mediapipe/calculators/extra/shot_boundary_calculator.pb.h"
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/calculator_runner.h"
 #include "mediapipe/framework/deps/file_path.h"
