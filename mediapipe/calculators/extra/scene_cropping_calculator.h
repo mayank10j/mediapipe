@@ -19,7 +19,7 @@
 #include <vector>
 
 #include "mediapipe/examples/desktop/autoflip/autoflip_messages.pb.h"
-#include "mediapipe/examples/desktop/autoflip/calculators/scene_cropping_calculator.pb.h"
+#include "mediapipe/calculators/extra/scene_cropping_calculator.pb.h"
 #include "mediapipe/examples/desktop/autoflip/quality/cropping.pb.h"
 #include "mediapipe/examples/desktop/autoflip/quality/focus_point.pb.h"
 #include "mediapipe/examples/desktop/autoflip/quality/frame_crop_region_computer.h"
