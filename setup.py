@@ -177,11 +177,11 @@ class GeneratePyProtos(setuptools.Command):
         'mediapipe/framework/**/*.proto', 'mediapipe/calculators/**/*.proto',
         'mediapipe/gpu/**/*.proto', 'mediapipe/modules/**/*.proto',
         'mediapipe/util/**/*.proto',
-        'mediapipe/examples/desktop/autoflip/**/*.proto'
+#        'mediapipe/examples/desktop/autoflip/**/*.proto'
     ]:
       for proto_file in glob.glob(pattern, recursive=True):
         # Ignore test protos.
-        sys.stderr.write("\n\n\nproto_file"+ proto_file)
+        sys.stderr.write("\n\n\nproto_file: "+ proto_file)
         if proto_file.endswith('test.proto'):
           continue
         # Ignore tensorflow protos.
@@ -201,7 +201,7 @@ class GeneratePyProtos(setuptools.Command):
     """Invokes the Protocol Compiler to generate a _pb2.py."""
 
     output = source.replace('.proto', '_pb2.py')
-    sys.stderr.write('generating proto file: %s\n' % output)
+    sys.stderr.write('\ngenerating proto file: %s\n' % output)
     if (not os.path.exists(output) or
         (os.path.exists(source) and
          os.path.getmtime(source) > os.path.getmtime(output))):
@@ -227,15 +227,11 @@ class BuildBinaryGraphs(build.build):
         'pose_landmark/pose_landmark_cpu',
         'pose_landmark/pose_landmark_cpu'
     ]
-    binary_graph_2 = ['autoflip/autoflip_graph']
     for binary_graph in binary_graphs:
       sys.stderr.write('generating binarypb: %s\n' %
                        os.path.join('mediapipe/modules/', binary_graph))
       self._generate_binary_graph(binary_graph)
-    # for binary_graph in binary_graph_2:
-    #   sys.stderr.write('generating binarypb: %s\n' %
-    #                    os.path.join('mediapipe/examples/desktop/', binary_graph))
-    #   self._generate_binary_graph2(binary_graph)
+
 
   def _generate_binary_graph(self, graph_path):
     """Generate binary graph for a particular MediaPipe binary graph target."""
@@ -248,34 +244,14 @@ class BuildBinaryGraphs(build.build):
         '--action_env=PYTHON_BIN_PATH=' + _normalize_path(sys.executable),
         os.path.join('mediapipe/modules/', graph_path),
     ]
-    #if not self.link_opencv and not IS_WINDOWS:
-    #  bazel_command.append('--define=OPENCV=source')
+    if not self.link_opencv and not IS_WINDOWS:
+      bazel_command.append('--define=OPENCV=source')
     if subprocess.call(bazel_command) != 0:
       sys.exit(-1)
     output_name = graph_path + '.binarypb'
     output_file = os.path.join('mediapipe/modules', output_name)
     shutil.copyfile(
         os.path.join('bazel-bin/mediapipe/modules/', output_name), output_file)
-
-  def _generate_binary_graph2(self, graph_path):
-    """Generate binary graph for a particular MediaPipe binary graph target."""
-
-    bazel_command = [
-        'bazel',
-        'build',
-        '--compilation_mode=opt',
-        '--define=MEDIAPIPE_DISABLE_GPU=1',
-        '--action_env=PYTHON_BIN_PATH=' + _normalize_path(sys.executable),
-        os.path.join('mediapipe/examples/desktop/', graph_path),
-    ]
-    #if not self.link_opencv and not IS_WINDOWS:
-    #  bazel_command.append('--define=OPENCV=source')
-    if subprocess.call(bazel_command) != 0:
-      sys.exit(-1)
-    output_name = graph_path + '.binarypb'
-    output_file = os.path.join('mediapipe/examples/desktop/', output_name)
-    shutil.copyfile(
-        os.path.join('bazel-bin/mediapipe/examples/desktop/', output_name), output_file)
 
 class BazelExtension(setuptools.Extension):
   """A C/C++ extension that is defined as a Bazel BUILD target."""
@@ -365,7 +341,7 @@ class Build(build.build):
     self.run_command('build_ext')
     self.run_command('modify_inits')
     build.build.run(self)
-#    self.run_command('remove_generated')
+    self.run_command('remove_generated')
 
 
 class Install(install.install):
