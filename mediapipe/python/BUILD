@@ -62,6 +62,7 @@ cc_library(
         "//mediapipe/calculators/image:scale_image_calculator",
         "//mediapipe/calculators/video:opencv_video_decoder_calculator",
         "//mediapipe/calculators/video:opencv_video_encoder_calculator",        
+        "//mediapipe/calculators/video:video_pre_stream_calculator",
         "//mediapipe/calculators/util:detection_unique_id_calculator",
         "//mediapipe/modules/face_detection:face_detection_front_cpu",
         "//mediapipe/modules/face_landmark:face_landmark_front_cpu",
@@ -80,5 +81,8 @@ cc_library(
         "//mediapipe/calculators/extra:shot_boundary_calculator",
         "//mediapipe/calculators/extra:signal_fusing_calculator",
         "//mediapipe/calculators/extra:video_filtering_calculator",
+        "//mediapipe/modules/autoflip/subgraph:autoflip_face_detection_subgraph",
+        "//mediapipe/modules/autoflip/subgraph:autoflip_object_detection_subgraph",
+        #"//mediapipe/modules/autoflip/subgraph:autoflip_face_detection_subgraph",
     ],
 )
