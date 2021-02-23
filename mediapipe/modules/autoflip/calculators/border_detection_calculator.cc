@@ -19,7 +19,7 @@
 #include <vector>
 
 #include "mediapipe/examples/desktop/autoflip/autoflip_messages.pb.h"
-#include "mediapipe/calculators/extra/border_detection_calculator.pb.h"
+#include "mediapipe/modules/autoflip/calculators/border_detection_calculator.pb.h"
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/formats/image_frame.h"
 #include "mediapipe/framework/formats/image_frame_opencv.h"

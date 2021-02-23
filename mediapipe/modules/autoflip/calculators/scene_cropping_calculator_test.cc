@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "mediapipe/calculators/extra/scene_cropping_calculator.h"
+#include "mediapipe/modules/autoflip/calculators/scene_cropping_calculator.h"
 
 #include <random>
 #include <utility>

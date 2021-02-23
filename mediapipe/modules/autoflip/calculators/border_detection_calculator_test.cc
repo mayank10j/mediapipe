@@ -14,7 +14,7 @@
 
 #include "absl/strings/string_view.h"
 #include "mediapipe/examples/desktop/autoflip/autoflip_messages.pb.h"
-#include "mediapipe/calculators/extra/border_detection_calculator.pb.h"
+#include "mediapipe/modules/autoflip/calculators/border_detection_calculator.pb.h"
 #include "mediapipe/framework/calculator_framework.h"
 #include "mediapipe/framework/calculator_runner.h"
 #include "mediapipe/framework/formats/image_frame.h"
