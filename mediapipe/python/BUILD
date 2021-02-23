@@ -72,6 +72,7 @@ cc_library(
         "//mediapipe/modules/pose_detection:pose_detection_cpu",
         "//mediapipe/modules/pose_landmark:pose_landmark_by_roi_cpu",
         "//mediapipe/modules/pose_landmark:pose_landmark_cpu",
+        "//mediapipe/modules/autoflip:autoflip_cpu",
         "//mediapipe/calculators/core:packet_thinner_calculator",
         "//mediapipe/modules/autoflip/calculators:border_detection_calculator",
         "//mediapipe/modules/autoflip/calculators:content_zooming_calculator",
