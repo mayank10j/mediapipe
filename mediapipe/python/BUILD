@@ -47,8 +47,11 @@ pybind_extension(
         "//mediapipe/framework/formats:classification_registration",
         "//mediapipe/framework/formats:detection_registration",
         "//mediapipe/framework/formats:landmark_registration",
+        "//mediapipe/framework/formats:image_format_registration",
+
     ],
 )
+
 
 cc_library(
     name = "builtin_calculators",
@@ -84,6 +87,10 @@ cc_library(
         "//mediapipe/modules/autoflip/calculators:video_filtering_calculator",
         "//mediapipe/modules/autoflip/subgraph:autoflip_face_detection_subgraph",
         "//mediapipe/modules/autoflip/subgraph:autoflip_object_detection_subgraph",
+        "//mediapipe/framework/formats:image_frame_opencv",
+        "//mediapipe/framework/formats:image_frame",
+        "//mediapipe/framework/formats:matrix",
+
         #"//mediapipe/modules/autoflip/subgraph:autoflip_face_detection_subgraph",
     ],
 )

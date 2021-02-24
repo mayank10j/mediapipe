@@ -66,6 +66,16 @@ mediapipe_proto_library(
     visibility = ["//visibility:public"],
 )
 
+mediapipe_register_type(
+    base_name = "image_format",
+    include_headers = ["mediapipe/framework/formats/image_format.pb.h"],
+    types = [
+        "::mediapipe::ImageFormat",
+        "::std::vector<::mediapipe::ImageFormat>",
+    ],
+    deps = [":image_format_cc_proto"],
+)
+
 mediapipe_proto_library(
     name = "matrix_data_proto",
     srcs = ["matrix_data.proto"],
