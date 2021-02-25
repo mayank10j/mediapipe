@@ -205,10 +205,22 @@ node {
 }
 
 """
-graph = mp.CalculatorGraph(graph_config=config_text)
 output_packets = []
-graph.observe_output_stream(
-    'out_stream',
-    lambda stream_name, packet:
-        output_packets.append(mp.packet_getter.get_str(packet)))
 
+graph = mp.CalculatorGraph(graph_config=config_text)
+graph.start_run(
+    input_side_packets={
+        'input_video_path':
+            mp.packet_creator.create_string("test.mp4")
+                ,
+        'output_video_path':
+            mp.packet_creator.create_string("test_trimmed.mp4")
+                ,
+        'aspect_ratio':
+            mp.packet_creator.create_string("1:1")
+                
+                
+    })
+
+graph.wait_until_done()
+graph.close()

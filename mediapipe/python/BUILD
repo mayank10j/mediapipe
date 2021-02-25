@@ -61,6 +61,7 @@ cc_library(
         "//mediapipe/calculators/core:side_packet_to_stream_calculator",
         "//mediapipe/calculators/core:split_normalized_landmark_list_calculator",
         "//mediapipe/calculators/core:string_to_int_calculator",
+        "//mediapipe/calculators/core:packet_thinner_calculator",
         "//mediapipe/calculators/image:image_transformation_calculator",
         "//mediapipe/calculators/image:scale_image_calculator",
         "//mediapipe/calculators/video:opencv_video_decoder_calculator",
