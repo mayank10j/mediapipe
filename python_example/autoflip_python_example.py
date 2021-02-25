@@ -1,4 +1,6 @@
 import mediapipe as mp
+import os
+
 
 config_text = """
 # Autoflip graph that only renders the final cropped video. For use with
@@ -207,17 +209,28 @@ node {
 """
 output_packets = []
 
+input_file_name = "test.mp4"
+output_file_name = "test_trimmed.mp4"
+target_aspect_ratio = "1:1"
+if not os.path.isfile(input_file_name):
+  print("Error: FileNotFound Input file: ", input_file_name)
+  exit(-1)
+
+if os.path.isfile(output_file_name):
+  print("Error: Output file already exist : ", output_file_name)
+  exit(-1)
+
 graph = mp.CalculatorGraph(graph_config=config_text)
 graph.start_run(
     input_side_packets={
         'input_video_path':
-            mp.packet_creator.create_string("test.mp4")
+            mp.packet_creator.create_string(input_file_name)
                 ,
         'output_video_path':
-            mp.packet_creator.create_string("test_trimmed.mp4")
+            mp.packet_creator.create_string(output_file_name)
                 ,
         'aspect_ratio':
-            mp.packet_creator.create_string("1:1")
+            mp.packet_creator.create_string(target_aspect_ratio)
                 
                 
     })
