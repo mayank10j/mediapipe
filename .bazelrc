@@ -1,5 +1,11 @@
 # The bazelrc file for MediaPipe OSS.
 
+# Build options for Debug build
+build:debug -c dbg
+build:debug --javacopt="-g"
+build:debug --copt="-g"
+build:debug --strip="never"
+
 # Tensorflow needs remote repo
 common --experimental_repo_remote_exec
 
