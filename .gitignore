@@ -203,3 +203,8 @@ mediapipe/MediaPipe.tulsiproj/*.tulsiconf-user
 mediapipe/provisioning_profile.mobileprovision
 .configure.bazelrc
 .user.bazelrc
+
+
+# Ignore genearted pb and init files
+*pb2.py
+*__init__.py
